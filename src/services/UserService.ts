@@ -32,5 +32,13 @@ export class UserService {
     getAllUsers = () => {
         return this.db
     }
+
+    deleteUser = (email: string) => {
+        this.db.forEach((value =>{
+            if (value.email === email){
+                this.db.splice(this.db.indexOf(value, 1));
+            }
+        }));
+    }
 }
 
